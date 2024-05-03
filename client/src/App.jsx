@@ -1,5 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as yup from "yup"
+import axios from "axios"
 
 function App() {
   const handleClickLogin = (values) => {
@@ -7,6 +8,14 @@ function App() {
   }
 
   const handleClickRegister = (values) => {
+    axios.post("https://localhost:8080/register"), {
+      email: values.email,
+      password: values.password
+    }.then((response => {
+      console.log(response)
+    }))
+
+
     console.log(values)
   }
 

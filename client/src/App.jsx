@@ -8,12 +8,14 @@ function App() {
   }
 
   const handleClickRegister = (values) => {
-    axios.post("https://localhost:8080/register"), {
-      email: values.email,
-      password: values.password
-    }.then((response => {
-      console.log(response)
-    }))
+    axios
+      .post("http://localhost:8080/register", {
+        email: values.email,
+        password: values.password
+      })
+      .then((response) => {
+        console.log(response);
+      })
 
 
     console.log(values)
@@ -85,7 +87,7 @@ function App() {
             <ErrorMessage component="span" name="confirmPassword" className="formError" />
           </div>
 
-          <button className="button" type="submit">Login</button>
+          <button className="button" type="submit">Cadastrar</button>
 
         </Form>
         

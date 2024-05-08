@@ -4,7 +4,14 @@ import axios from "axios"
 
 function App() {
   const handleClickLogin = (values) => {
-    console.log(values)
+    axios
+      .post("http://localhost:8080/login", {
+        email: values.email,
+        password: values.password
+      })
+      .then((response) => {
+        alert(response.data.msg)
+      })
   }
 
   const handleClickRegister = (values) => {
@@ -14,7 +21,7 @@ function App() {
         password: values.password
       })
       .then((response) => {
-        console.log(response);
+        alert(response.data.msg)
       })
 
 
